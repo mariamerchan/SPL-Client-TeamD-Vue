@@ -1,4 +1,4 @@
-# testimonial-team-b
+# testimonial-lideres en formación
 
 ## Project setup
 
