@@ -1,22 +1,23 @@
 <template>
   <div class="my-8">
-    <h2>Testimonios Software Project Leader</h2>
+    <h2>OfreSer 🤝 SPL</h2>
+    <h3>¿Qué tenemos para ofrecer?</h3>
     <!-- Nombre del Team -->
-    <h3>Lideres en construcción</h3>
+    <h2>Team B </h2>
     <v-row class="row-container mt-9">
-      <v-col v-for="testimonio in testimonios" :key="testimonio.id" cols="12" sm="6" md="4" lg="3">
+      <v-col v-for="ofrecimiento in ofrecimientos" :key="ofrecimiento.id" cols="12" sm="6" md="4" lg="3">
         <v-card shaped class="mb-4">
           <v-card-title class="headline">
             <v-icon class="mr-2">mdi-account</v-icon>
-            {{ testimonio.nombre }}
+            {{ ofrecimiento.nombre }}
           </v-card-title>
           <v-card-text>
             <v-icon class="mr-2">mdi-text-account</v-icon>
-            {{ testimonio.descripcion }}
+            {{ ofrecimiento.descripcion }}
           </v-card-text>
           <v-card-text>
             <v-icon class="mr-2">mdi-linkedin</v-icon>
-            <a :href="testimonio.socialUrl" target="_blank" rel="noopener noreferrer">{{ testimonio.socialUrl }}</a>
+            <a :href="ofrecimiento.socialUrl" target="_blank" rel="noopener noreferrer">{{ ofrecimiento.socialUrl }}</a>
           </v-card-text>
         </v-card>
       </v-col>
@@ -28,21 +29,21 @@
 export default {
   data() {
     return {
-      testimonios: [],
+      ofrecimientos: [],
     };
   },
 
   created() {
-    this.obtenerTestimonios();
+    this.obtenerOfrecimientos();
   },
 
   methods: {
-    // Solicitud HTTP GET para obtener los testimonios desde el servidor
-    obtenerTestimonios() {
-      fetch(`${process.env.VUE_APP_SERVER_URL}api/obtener-testimonios`)
+    // Solicitud HTTP GET para obtener los ofrecimientos desde el servidor
+    obtenerOfrecimientos() {
+      fetch(`${process.env.VUE_APP_SERVER_URL}api/obtener-ofrecimientos`)
         .then(response => response.json())
         .then(data => {
-          this.testimonios = data;
+          this.ofrecimientos = data;
         })
         .catch(error => {
           console.error(error);
@@ -52,13 +53,29 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@media only screen and (max-width: 600px) {
+
+  h2 {
+    font-size: 25px !important;
+    padding: 0 20px !important;
+  }
+
+}
+
 h2,
 h3 {
   text-align: center;
-  font-size: 35px;
   font-weight: bold;
-  color: #165C66;
+  color: #165c66;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
 }
 
 .headline {
@@ -67,7 +84,7 @@ h3 {
 }
 
 .v-card {
-  height: 300px;
+  height: 250px;
   overflow-y: auto;
   padding: 6px;
 }
