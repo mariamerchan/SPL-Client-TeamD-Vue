@@ -237,7 +237,7 @@ export default {
 
 h1 {
   font-weight: bold;
-  color: #165c66;
+  color: #051330;
 }
 
 .btn-container {

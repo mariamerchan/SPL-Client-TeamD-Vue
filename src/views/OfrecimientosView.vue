@@ -1,6 +1,6 @@
 <template>
   <div class="my-8">
-    <h2>OfreSer 🤝 SPL</h2>
+    <h2>Ofrecer 🤝 SPL</h2>
     <h3>¿Qué tenemos para ofrecer?</h3>
     <!-- Nombre del Team -->
     <h2>Team B </h2>
@@ -67,7 +67,7 @@ h2,
 h3 {
   text-align: center;
   font-weight: bold;
-  color: #165c66;
+  color: #051330;
 }
 
 h2 {
